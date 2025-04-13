@@ -5,14 +5,14 @@
   "type": "module",
   "main": "electron/main.cjs",
   "build": {
-    "appId": "com.seuapp.id",
-    "productName": "DT Money",
+    "appId": "com.dtmoney.app",
+    "productName": "DTmoney",
     "directories": {
       "buildResources": "assets"
     },
     "files": [
       "dist/**/*",
-      "electron/main.js"
+      "electron/**/*"
     ],
     "win": {
       "target": "nsis"
