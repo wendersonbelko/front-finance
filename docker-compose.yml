@@ -7,7 +7,7 @@ services:
     image: dtmoney-web:latest
     restart: unless-stopped
     ports:
-      - "80:4000"
+      - "4000:80"
     healthcheck:
       test: ["CMD", "wget", "--spider", "http://localhost"]
       interval: 30s
