@@ -1,15 +1,19 @@
 version: '3.8'
+
 services:
   web:
     build:
       context: .
       dockerfile: Dockerfile
-    image: dtmoney-web:latest
-    restart: unless-stopped
+    container_name: belko-web
     ports:
-      - "4000:80"
-    healthcheck:
-      test: ["CMD", "wget", "--spider", "http://localhost"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
+      - "80:80"         # expõe o nginx do frontend
+    restart: unless-stopped
+    # depends_on:
+    #   - server         # _opcional_ — isso só funciona se você usar um único compose com ambos services; se estiver em repos separados, ignore este depends_on
+    networks:
+      - belko_net
+
+networks:
+  belko_net:
+    external: true
