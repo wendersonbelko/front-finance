@@ -6,8 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: belko-web
-    ports:
-      - "80:80"         # expõe o nginx do frontend
+    expose:
+      - 80
     restart: unless-stopped
     # depends_on:
     #   - server         # _opcional_ — isso só funciona se você usar um único compose com ambos services; se estiver em repos separados, ignore este depends_on
