@@ -3,7 +3,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 import Cookies from 'js-cookie';
 
 const api = axios.create({
-  baseURL: 'http://5.161.229.88:3000',
+  baseURL: 'https://backend.belko.com.br',
   headers: {
     'Content-Type': 'application/json',
   },
